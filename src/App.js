@@ -22,6 +22,15 @@ class App extends Component {
       ]
     })
   }
+  nameChangedHandler = (event)=> {
+    this.setState({
+      persons:[
+        {name:'Max', age : 29},
+        {name:event.target.value, age :13},
+        {name:'Jill', age : 34}
+      ]
+    })
+  }
     render() {
         return (
           // we don't have to add a class attribute
@@ -37,7 +46,8 @@ class App extends Component {
             <Person
               name={this.state.persons[1].name}
               age={this.state.persons[1].age}
-              click={this.switchHandlerMethod.bind(this,'Mac')}>
+              click={this.switchHandlerMethod.bind(this,'Mac')}
+              changed = {this.nameChangedHandler}>
             </Person>
             <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>
               This is a text
