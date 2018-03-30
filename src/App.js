@@ -2,16 +2,23 @@ import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 class App extends Component {
+  state = {
+    persons:[
+      {name:'Max', age : 29},
+      {name:'Manu', age :13},
+      {name:'Angel', age : 34}
+    ]
+  }
     render() {
         return (
           // we don't have to add a class attribute
           // There will be one div for a component to start
           <div className = "App" >
             <h1> Hello in react </h1>
-            <Person name='Max' age='23'></Person>
-            <Person name='Angel' age='18'></Person>
-            <Person name='Jon' age='12'>
-              This is a text 
+            <Person name={this.state.persons[0].name} age={this.state.persons[0].age}></Person>
+            <Person name={this.state.persons[1].name} age={this.state.persons[1].age}></Person>
+            <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>
+              This is a text
             </Person>
           </div >
         );
