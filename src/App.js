@@ -9,14 +9,14 @@ class App extends Component {
       {name:'Angel', age : 34}
     ]
   }
-  switchHandlerMethod = ()=> {
+  switchHandlerMethod = (changeName)=> {
     //console.log('called')
     // Don't do that
     // this.state.persons[0].name = 'Kol';
     // use special property
     this.setState({
       persons:[
-        {name:'Jon', age : 29},
+        {name:changeName, age : 29},
         {name:'Joe', age :13},
         {name:'Jill', age : 34}
       ]
@@ -28,9 +28,17 @@ class App extends Component {
           // There will be one div for a component to start
           <div className = "App" >
             <h1> Hello in react </h1>
-            <button onClick={this.switchHandlerMethod}>Switch</button>
-            <Person name={this.state.persons[0].name} age={this.state.persons[0].age}></Person>
-            <Person name={this.state.persons[1].name} age={this.state.persons[1].age}></Person>
+            <button onClick={this.switchHandlerMethod.bind(this,'KBB')}>Switch</button>
+            <Person
+              name={this.state.persons[0].name}
+              age={this.state.persons[0].age}
+              click= {this.switchHandlerMethod.bind(this,'Max')}>
+            </Person>
+            <Person
+              name={this.state.persons[1].name}
+              age={this.state.persons[1].age}
+              click={this.switchHandlerMethod.bind(this,'Mac')}>
+            </Person>
             <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>
               This is a text
             </Person>
