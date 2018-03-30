@@ -8,8 +8,8 @@ class App extends Component {
           // There will be one div for a component to start
           <div className = "App" >
             <h1> Hello in react </h1>
-            <Person/>
-            <Person/>
+            <Person name='Max' age='23'></Person>
+            <Person name='Angel' age='18'></Person>
           </div >
         );
         //return React.createElement('div', {className : 'App'}, React.createElement('h1', null, 'Hello from React'))
